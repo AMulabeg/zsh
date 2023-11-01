@@ -5,12 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 export TERM='xterm-256color'
+echo Unalive yourself
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:.:$PATH
+export PATH=/Users/amer/.local/bin:$PATH
 export PATH=${PATH}:/usr/local/mysql-8.0.32-macos13-arm64/bin
-source /opt/homebrew/share/antigen/antigen.zsh
+#source /opt/homebrew/share/antigen/antigen.zsh
 eval "$(starship init zsh)"
-alias kys="sudo shutdown -h now"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load ---if set to "random", it will
@@ -71,15 +72,23 @@ ZSH_THEME=""
 # HIST_STAMPS="mm/dd/yyyy" Would you like to use another custom folder than $ZSH/custom? ZSH_CUSTOM=/path/to/new-custom-folder Which plugins would you like to load? Standard plugins can be found in $ZSH/plugins/ Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup. plugins=(git zsh-autosuggestions)
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search sudo )
 source $ZSH/oh-my-zsh.sh 
-alias ls="lsd"
-alias todolist="ultralist"
-alias vim ="nvim"
-alias n="neofetch --ascii_distro arch"
+alias givepassword='security find-generic-password -wa'
+alias n="neofetch"
 alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # User configuration export MANPATH="/usr/local/man:$MANPATH"
 alias moo="cowsay I use Macos btw"
+alias kys="sudo shutdown -h now"
+alias code="codium"
+alias vim="lvim"
+alias vi="lvim"
+alias oldvim="vim"
+unalias ls
+alias ls="eza" 
+alias todolist='ultralist list'
+alias ':q'='echo "wrong prompt retard"'
 # You may need to manually set your language environment
+
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
@@ -106,4 +115,11 @@ alias moo="cowsay I use Macos btw"
 
 # Fig post block. Keep at the bottom of this file.
 
-eval $(thefuck --alias)
+
+#[ -f "/Users/amer/.ghcup/env" ] && source "/Users/amer/.ghcup/env" # ghcup-env
+[ -f "/Users/amer/.ghcup/env" ] && source "/Users/amer/.ghcup/env" # ghcup-envexport PATH=/opt/homebrew/anaconda3/bin:/usr/local/anaconda3/bin:/Users/amer/.local/bin:/Users/amer/bin:/usr/local/bin:.:/Users/amer/.local/bin:/Users/amer/bin:/usr/local/bin:.:/opt/homebrew/bin:/opt/homebrew/sbin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/TeX/texbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Users/amer/Library/Application Support/JetBrains/Toolbox/scripts:/usr/local/mysql-8.0.32-macos13-arm64/bin:/usr/local/mysql-8.0.32-macos13-arm64/bin >> ~/.zshrc
+
+
+
+
+export PATH=/opt/homebrew/anaconda3/bin:$PATH
